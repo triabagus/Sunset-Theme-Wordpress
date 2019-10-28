@@ -11,5 +11,14 @@
     </a> 
 </div>
 
+# Intallation
+1. You have web server ; example = xampp, apache, mampp, etc.
+2. Download wordpress in [download in here](https://id.wordpress.org/download/)
+3. Configurate wordpress basic and database.
+4. You Download my repositories [download in here](https://github.com/triabagus/Sunset-Theme-Wordpress/archive/master.zip)
+5. Paste your download theme in folder /wp-content/themes/
+6. So you refresh and enjoy free theme.
+
 # Reverense 
 - [Part 1](https://www.youtube.com/watch?v=IZdMWEjbsIo&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=2)
+- [Part 2](https://www.youtube.com/watch?v=nvsK0cTH0So&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=3)
