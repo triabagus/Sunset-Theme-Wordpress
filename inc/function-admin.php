@@ -34,14 +34,33 @@ function sunset_add_admin_page()
 
     //Generate Sunset Admin Sub Page
     add_submenu_page('triabagus_sunset', 'Sunset Theme Options', 'General', 'manage_options', 'triabagus_sunset', 'sunset_theme_create_page'); 
-
     add_submenu_page('triabagus_sunset', 'Sunset CSS Options', 'Custom CSS', 'manage_options', 'triabagus_sunset_css', 'sunset_theme_settings_page');
 
+    //Active custom settings
+    add_action('admin_init', 'sunset_custom_settings');
 
 
 }
 
 add_action('admin_menu', 'sunset_add_admin_page');
+
+function sunset_custom_settings()
+{
+    register_setting('sunset-settings-group', 'first_name');
+    add_settings_section('sunset-sidebar-options', 'Sidebar Options', 'sunset_sidebar_options', 'triabagus_sunset');
+    add_settings_field('sidebar-name', 'Firts Name', 'sunset_sidebar_name', 'triabagus_sunset', 'sunset-sidebar-options');
+}
+
+function sunset_sidebar_options()
+{
+    echo 'Customize your Sidebar Information';
+}
+
+function sunset_sidebar_name()
+{
+    $firstName = esc_attr( get_option('first_name') );
+    echo '<input type="text" name="first_name" value="'.$firstName.'" placeholder="First Name" />';
+}
 
 function sunset_theme_create_page()
 {

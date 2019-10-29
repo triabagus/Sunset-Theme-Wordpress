@@ -1,4 +1,7 @@
 <h1>Sunset Theme Options</h1>
-<h3 class="title">Manage Options</h3>
-<p>Customize the dafault Wordpress Apperance Options</p>
-<?php bloginfo('name'); ?>
+<?php settings_errors(); ?>
+<form action="options.php" method="post">
+    <?php settings_fields('sunset-settings-group'); ?>
+    <?php do_settings_sections('triabagus_sunset'); ?>
+    <?php submit_button(); ?>
+</form>
