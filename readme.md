@@ -23,7 +23,7 @@
 - [Part 1 | Initial commit , configurate font and basic folder structure](https://www.youtube.com/watch?v=IZdMWEjbsIo&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=2)
 - [Part 2 | Configurate readme and create a Custom Admin Page](https://www.youtube.com/watch?v=nvsK0cTH0So&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=3)
 - [Part 3 | How to installation theme readme, create Admin SubPages menu, Not Repeat submenu and Templating function hook](https://www.youtube.com/watch?v=W2KfdcHDO3Y&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=4)
-- [Part 4 ](https://www.youtube.com/watch?v=pTegcB9zMSM&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=5)
-
+- [Part 4 | Create Custom Options with Settings API](https://www.youtube.com/watch?v=pTegcB9zMSM&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=5)
+- [Part 5 | Custom Social Media Fields and Sanitize Callbacks](https://www.youtube.com/watch?v=qVPqqYMoTHc&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=6)
 
 - [Github reverensi](https://github.com/Alecaddd/Sunset-theme)
