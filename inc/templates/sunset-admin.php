@@ -24,5 +24,5 @@
 <form action="options.php" method="post" class="sunset-general-form">
     <?php settings_fields('sunset-settings-group'); ?>
     <?php do_settings_sections('triabagus_sunset'); ?>
-    <?php submit_button(); ?>
+    <?php submit_button('Save Changes', 'primary', 'btnSubmit'); ?>
 </form>
