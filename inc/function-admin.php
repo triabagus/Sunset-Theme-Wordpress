@@ -33,19 +33,21 @@ function sunset_add_admin_page()
         // custom icon 'dashicons-palmtree' => get_template_directory_uri() . '/img/sunset-icon.png'
 
     //Generate Sunset Admin Sub Page
-    add_submenu_page('triabagus_sunset', 'Sunset Theme Options', 'General', 'manage_options', 'triabagus_sunset', 'sunset_theme_create_page'); 
+    add_submenu_page('triabagus_sunset', 'Sunset Sidebar Options', 'Sidebar', 'manage_options', 'triabagus_sunset', 'sunset_theme_create_page'); 
+    add_submenu_page('triabagus_sunset', 'Sunset Theme Options', 'Theme Options', 'manage_options', 'triabagus_sunset_theme', 'sunset_theme_support_page');
     add_submenu_page('triabagus_sunset', 'Sunset CSS Options', 'Custom CSS', 'manage_options', 'triabagus_sunset_css', 'sunset_theme_settings_page');
 
-    //Active custom settings
-    add_action('admin_init', 'sunset_custom_settings');
-
-
+    
 }
 
 add_action('admin_menu', 'sunset_add_admin_page');
 
+//Active custom settings
+add_action('admin_init', 'sunset_custom_settings');
+
 function sunset_custom_settings()
 {
+    //Sidebar Options
     register_setting('sunset-settings-group', 'profile_picture');
     register_setting('sunset-settings-group', 'first_name');
     register_setting('sunset-settings-group', 'last_name');
@@ -62,8 +64,41 @@ function sunset_custom_settings()
     add_settings_field('sidebar-twitter', 'Twitter handler', 'sunset_sidebar_twitter', 'triabagus_sunset', 'sunset-sidebar-options');
     add_settings_field('sidebar-fb', 'Facebook handler', 'sunset_sidebar_fb', 'triabagus_sunset', 'sunset-sidebar-options');
     add_settings_field('sidebar-ig', 'Instagram handler', 'sunset_sidebar_ig', 'triabagus_sunset', 'sunset-sidebar-options');
+
+    //Theme Support Options
+    register_setting('sunset-theme-support', 'post_formats', 'sunset_post_formats_callback');
+
+    add_settings_section('sunset-theme-options', 'Theme Options', 'sunset_theme_options', 'triabagus_sunset_theme');
+
+    add_settings_field('post-formats', 'Post Formats', 'sunset_post_formats', 'triabagus_sunset_theme', 'sunset-theme-options');
 }
 
+//Post Formats Callback Funstion
+function sunset_post_formats_callback( $input)
+{
+    return $input;
+}
+
+function sunset_theme_options()
+{
+    echo 'Activate and Deactivated specific Theme Support Options';
+}
+
+function sunset_post_formats()
+{
+    $options = get_option('post_formats');
+    $formats = array('aside', 'gallery', 'link', 'image', 'quotes', 'status', 'video', 'audio', 'chat');
+    $output = '';
+
+    foreach ($formats as $format) {
+        $checked = ( @$options[$format] == 1 ? 'checked': '');
+        $output .= '<label><input type="checkbox" name="post_formats['.$format.']" id="'.$format.'" value="1" '.$checked.'/>'.$format.'</label><br>';
+    }
+
+    echo $output;
+}
+
+//Sidebar Options Funstion
 function sunset_sidebar_options()
 {
     echo 'Customize your Sidebar Information';
@@ -114,6 +149,13 @@ function sunset_sanitize_twitter_handler( $input )
     $output = sanitize_text_field( $input );
     $output = str_replace('@', '', $output);
     return $output;
+}
+
+//Template submenu function
+function sunset_theme_support_page()
+{
+    // generate of our theme support page
+    require_once( get_template_directory(). '/inc/templates/sunset-theme-support.php');
 }
 
 function sunset_theme_create_page()
