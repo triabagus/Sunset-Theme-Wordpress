@@ -26,5 +26,6 @@
 - [Part 4 | Create Custom Options with Settings API](https://www.youtube.com/watch?v=pTegcB9zMSM&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=5)
 - [Part 5 | Custom Social Media Fields and Sanitize Callbacks](https://www.youtube.com/watch?v=qVPqqYMoTHc&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=6)
 - [Part 6 | Include CSS in the Administration Panel](https://www.youtube.com/watch?v=0bZdyJKZUDw&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=7)
+- [Part 7 | Use the WordPress Media Uploader](https://www.youtube.com/watch?v=_uk_clTGWlE&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=8)
 
 - [Github reverensi](https://github.com/Alecaddd/Sunset-theme)
