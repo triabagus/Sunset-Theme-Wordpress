@@ -30,5 +30,5 @@
 - [Part 8 | Activate Custom Theme Support Options](https://www.youtube.com/watch?v=XWM3i1nvpNY&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=9)
 - [Part 9 | Remove Profile Picture and other Theme Support Options and Bug Theme Support Before](https://www.youtube.com/watch?v=a8GwPJjGCO8&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=10)
 - [Part 10 | Create a Custom Contact Form](https://www.youtube.com/watch?v=v1UvKtGMm3A&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=11)
-
+- [Part 11 | Manage and Create Custom Columns](https://www.youtube.com/watch?v=UTS536CE8E4&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=12)
 - [Github reverensi](https://github.com/Alecaddd/Sunset-theme)
