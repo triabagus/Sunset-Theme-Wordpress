@@ -21,14 +21,5 @@
 
 # Reverense 
 - [Part 1 | Initial commit , configurate font and basic folder structure](https://www.youtube.com/watch?v=IZdMWEjbsIo&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=2)
-- [Part 2 | Configurate readme and create a Custom Admin Page](https://www.youtube.com/watch?v=nvsK0cTH0So&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=3)
-- [Part 3 | How to installation theme readme, create Admin SubPages menu, Not Repeat submenu and Templating function hook](https://www.youtube.com/watch?v=W2KfdcHDO3Y&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=4)
-- [Part 4 | Create Custom Options with Settings API](https://www.youtube.com/watch?v=pTegcB9zMSM&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=5)
-- [Part 5 | Custom Social Media Fields and Sanitize Callbacks](https://www.youtube.com/watch?v=qVPqqYMoTHc&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=6)
-- [Part 6 | Include CSS in the Administration Panel](https://www.youtube.com/watch?v=0bZdyJKZUDw&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=7)
-- [Part 7 | Use the WordPress Media Uploader](https://www.youtube.com/watch?v=_uk_clTGWlE&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=8)
-- [Part 8 | Activate Custom Theme Support Options](https://www.youtube.com/watch?v=XWM3i1nvpNY&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=9)
-- [Part 9 | Remove Profile Picture and other Theme Support Options and Bug Theme Support Before](https://www.youtube.com/watch?v=a8GwPJjGCO8&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=10)
-- [Part 10 | Create a Custom Contact Form](https://www.youtube.com/watch?v=v1UvKtGMm3A&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=11)
-- [Part 11 | Manage and Create Custom Columns](https://www.youtube.com/watch?v=UTS536CE8E4&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=12)
+
 - [Github reverensi](https://github.com/Alecaddd/Sunset-theme)
