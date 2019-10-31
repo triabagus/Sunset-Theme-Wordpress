@@ -28,6 +28,7 @@
 - [Part 6 | Include CSS in the Administration Panel](https://www.youtube.com/watch?v=0bZdyJKZUDw&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=7)
 - [Part 7 | Use the WordPress Media Uploader](https://www.youtube.com/watch?v=_uk_clTGWlE&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=8)
 - [Part 8 | Activate Custom Theme Support Options](https://www.youtube.com/watch?v=XWM3i1nvpNY&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=9)
-- [Pasrt 9 | Remove Profile Picture and other Theme Support Options and Bug Theme Support Before](https://www.youtube.com/watch?v=a8GwPJjGCO8&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=10)
+- [Part 9 | Remove Profile Picture and other Theme Support Options and Bug Theme Support Before](https://www.youtube.com/watch?v=a8GwPJjGCO8&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=10)
+- [Part 10 | Create a Custom Contact Form](https://www.youtube.com/watch?v=v1UvKtGMm3A&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=11)
 
 - [Github reverensi](https://github.com/Alecaddd/Sunset-theme)
