@@ -20,6 +20,9 @@
 6. So you refresh and enjoy free theme.
 
 # Reverense 
-- [Part 1 | Initial commit , configurate font and basic folder structure](https://www.youtube.com/watch?v=IZdMWEjbsIo&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=2)
+- [Guide Tutorial Build Wordpress Theme Premium](https://www.youtube.com/watch?v=IZdMWEjbsIo&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=2)
 
 - [Github reverensi](https://github.com/Alecaddd/Sunset-theme)
+
+# Bug Fixed
+- [Download Ace Editor Build](https://triabagus.github.io/DownGit/#/home?url=https:%2F%2Fgithub.com%2Fajaxorg%2Face-builds%2Ftree%2Fmaster%2Fsrc)

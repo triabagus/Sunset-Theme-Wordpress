@@ -83,6 +83,25 @@ function sunset_custom_settings()
     add_settings_section('sunset-contact-section', 'Contact Form', 'sunset_contact_section', 'triabagus_sunset_theme_contact');
 
     add_settings_field('activate-form', 'Activate Contact Form', 'sunset_activate_contact', 'triabagus_sunset_theme_contact', 'sunset-contact-section');
+
+    //Custom CSS Options
+    register_setting('sunset-custom-css-options', 'sunset_css', 'sunset_sanitize_custom_css');
+
+    add_settings_section('sunset-custom-css-section', 'Custom CSS', 'sunset_custom_css_section_callback', 'triabagus_sunset_css');
+
+    add_settings_field('custom-css', 'Insert your Custom CSS', 'sunset_custom_css_callback', 'triabagus_sunset_css', 'sunset-custom-css-section');
+}
+
+function sunset_custom_css_section_callback()
+{
+    echo 'Customize Sunset Theme with you own CSS';
+}
+
+function sunset_custom_css_callback()
+{
+    $css = get_option('sunset_css');
+    $css = ( empty($css) ? '/* Sunset Theme Custom CSS */': $css);
+    echo '<div id="customCss">'.$css.'</div><textarea id="sunset_css" name="sunset_css" style="display:none;visibility:hidden;">'.$css.'</textarea>';
 }
 
 function sunset_theme_options()
@@ -189,6 +208,12 @@ function sunset_sanitize_twitter_handler( $input )
     return $output;
 }
 
+function sunset_sanitize_custom_css( $input )
+{
+    $output = esc_textarea($input);
+    return $output;
+}
+
 //Template submenu function
 function sunset_theme_support_page()
 {
@@ -210,8 +235,6 @@ function sunset_theme_create_page()
 
 function sunset_theme_settings_page()
 {
-    // generate of our admin page settings
-    echo '<h1>Sunset Custom CSS</h1>';
-
+    // generate of our admin page settings CSS Custom
+    require_once( get_template_directory() . '/inc/templates/sunset-custom-css.php' );
 }
-
