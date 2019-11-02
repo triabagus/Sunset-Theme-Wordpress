@@ -37,6 +37,29 @@ h2.sunset-description {
 }
 
 /*
+    Icon Sunset Sidebar Admin
+*/
+.sunset-icon-sidebar {
+    color: rgb(255, 255, 255);
+    margin: 0 2px;
+}
+
+.sunset-icon-sidebar:before {
+    width: 22px;
+    height: 22px;
+    font-size: 22px;
+}
+
+.sunset-icon-sidebar--gplus {
+    margin-left: 8px;
+}
+
+.sunset-icon-button:before {
+    margin-top: 3px;
+    margin-left: -3px;
+}
+
+/*
     Image Admin Sunset
 */
 .image-container {

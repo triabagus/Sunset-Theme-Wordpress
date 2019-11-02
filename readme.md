@@ -26,3 +26,10 @@
 
 # Bug Fixed
 - [Download Ace Editor Build](https://triabagus.github.io/DownGit/#/home?url=https:%2F%2Fgithub.com%2Fajaxorg%2Face-builds%2Ftree%2Fmaster%2Fsrc)
+
+# Sass
+[Installation Sass](https://sass-lang.com/install).
+run in terminal : 
+```
+    sass --watch sass:css
+```
