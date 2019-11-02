@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-sm-12">
 
-                <div class="header-container background-image text-center" style="background-image: url(<?php header_image(); ?>);">
+                <header class="header-container background-image text-center" style="background-image: url(<?php header_image(); ?>);">
 
                     <div class="header-content table">
                         <div class="table-cell">
@@ -40,9 +40,21 @@
                             <h2 class="site-description"><?php bloginfo('description'); ?></h2>
                         </div><!-- .table-cell -->
                     </div><!-- .header-content -->
-                    <div class="nav-container"></div><!-- .nav-container -->
+                    <div class="nav-container">
 
-                </div><!-- .header-container -->
+                        <nav class="nav justify-content-center navbar-sunset">
+                            <?php 
+                                wp_nav_menu( array(
+                                    'theme_location'    => 'primary',
+                                    'container'         => false,
+                                    'menu_class'        => 'nav nav-item'
+                                ) );
+                            ?>
+                        </nav>
+
+                    </div><!-- .nav-container -->
+
+                </header><!-- .header-container -->
 
             </div><!-- .col-xs-12 -->
         </div><!-- .row -->
