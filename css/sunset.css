@@ -7,6 +7,10 @@
     ------------------------------------------------
 */
 /* 
+	Mixins 
+	------------------------------------------------
+*/
+/* 
 	Font Icon 
 	------------------------------------------------
 */
@@ -137,11 +141,111 @@ body {
   margin-top: 1em;
 }
 
+/*
+    Navbar 
+    -------------------------------
+*/
 .nav-container {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.navbar-sunset {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.navbar-sunset li.active a {
+  opacity: 1;
+}
+.navbar-sunset li.active a:after {
+  --webkit-transform: $val;
+  --moz-transform: $val;
+  --ms-transform: $val;
+  --o-transform: $val;
+  transform: translateY(0);
+  opacity: 1;
+}
+.navbar-sunset li.dropdown a {
+  opacity: 1;
+}
+.navbar-sunset li.dropdown a:after {
+  content: "";
+  margin: 0 5px;
+  width: 0;
+  display: inline-block;
+  height: 0px;
+  opacity: 0;
+  background-color: transparent;
+  --webkit-transform: $val;
+  --moz-transform: $val;
+  --ms-transform: $val;
+  --o-transform: $val;
+  transform: translateY(0);
+  opacity: 1;
+}
+.navbar-sunset li.dropdown a:hover, .navbar-sunset li.dropdown a:focus, .navbar-sunset li.dropdown a:visited {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+.navbar-sunset li a {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 15px;
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+  --webkit-transition: $attr $time ease;
+  --moz-transition: $attr $time ease;
+  --ms-transition: $attr $time ease;
+  --o-transition: $attr $time ease;
+  transition: opacity 320ms ease;
+}
+.navbar-sunset li a:hover, .navbar-sunset li a:focus, .navbar-sunset li a:visited {
+  opacity: 1;
+  text-decoration: none;
+}
+.navbar-sunset li a:hover:after, .navbar-sunset li a:focus:after, .navbar-sunset li a:visited:after {
+  --webkit-transform: $val;
+  --moz-transform: $val;
+  --ms-transform: $val;
+  --o-transform: $val;
+  transform: translateY(0);
+  opacity: 1;
+}
+.navbar-sunset li a:after {
+  content: "";
+  margin: 0px auto;
+  width: 100%;
+  display: block;
+  height: 2px;
+  background-color: #ffff;
+  opacity: 0;
+  --webkit-transition: $attr $time ease;
+  --moz-transition: $attr $time ease;
+  --ms-transition: $attr $time ease;
+  --o-transition: $attr $time ease;
+  transition: all 320ms ease;
+  --webkit-transform: $val;
+  --moz-transform: $val;
+  --ms-transform: $val;
+  --o-transform: $val;
+  transform: translateY(4px);
+}
+.navbar-sunset li ul.dropdown-menu {
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+.navbar-sunset li ul.dropdown-menu li {
+  display: block;
+}
+.navbar-sunset li ul.dropdown-menu li:hover, .navbar-sunset li ul.dropdown-menu li:focus, .navbar-sunset li ul.dropdown-menu li:visited {
+  background: rgba(0, 0, 0, 0.25) !important;
+}
+.navbar-sunset li ul.dropdown-menu li a {
+  color: #fff;
+  padding: 0.5rem 1rem;
 }
 
 /*# sourceMappingURL=sunset.css.map */

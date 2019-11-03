@@ -16,6 +16,27 @@ Verdana,
 sans-serif;
 
 /* 
+	Mixins 
+	------------------------------------------------
+*/
+
+@mixin animate($attr, $time) {
+    --webkit-transition: $attr $time ease;
+    --moz-transition: $attr $time ease;
+    --ms-transition: $attr $time ease;
+    --o-transition: $attr $time ease;
+    transition: $attr $time ease;
+}
+
+@mixin transform($val) {
+    --webkit-transform: $val;
+    --moz-transform: $val;
+    --ms-transform: $val;
+    --o-transform: $val;
+    transform: $val;
+}
+
+/* 
 	Font Icon 
 	------------------------------------------------
 */
@@ -153,9 +174,118 @@ body {
     margin-top: 1em;
 }
 
+/*
+    Navbar 
+    -------------------------------
+*/
+
 .nav-container {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.navbar-sunset {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    li {
+
+        &.active {
+            a {
+                opacity: 1;
+
+                &:after {
+                    @include transform(translateY(0));
+                    opacity: 1;
+                }
+            }
+        }
+
+
+        &.dropdown {
+
+            a {
+                opacity: 1;
+
+                &:after {
+                    content: '';
+                    margin: 0 5px;
+                    width: 0;
+                    display: inline-block;
+                    height: 0px;
+                    opacity: 0;
+                    background-color: transparent;
+                    @include transform(translateY(0));
+                    opacity: 1;
+                }
+
+                &:hover,
+                &:focus,
+                &:visited {
+                    background-color: rgba(0, 0, 0, 0.1) !important;
+                }
+            }
+
+        }
+
+
+        a {
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 15px;
+            opacity: 0.7;
+            letter-spacing: 0.05em;
+            @include animate(opacity, 320ms);
+
+            &:hover,
+            &:focus,
+            &:visited {
+                opacity: 1;
+                text-decoration: none;
+
+                &:after {
+                    @include transform(translateY(0));
+                    opacity: 1;
+                }
+            }
+
+            &:after {
+                content: '';
+                margin: 0px auto;
+                width: 100%;
+                display: block;
+                height: 2px;
+                background-color: #ffff;
+                opacity: 0;
+                @include animate(all, 320ms);
+                @include transform(translateY(4px));
+            }
+
+        }
+
+        ul.dropdown-menu {
+            border: 0;
+            padding: 0;
+            border-radius: 0;
+            background: rgba(0, 0, 0, 0.75);
+
+            li {
+                display: block;
+
+                &:hover,
+                &:focus,
+                &:visited {
+                    background: rgba(0, 0, 0, 0.25) !important;
+                }
+
+                a {
+                    color: #fff;
+                    padding: .5rem 1rem;
+                }
+            }
+        }
+
+    }
 }
