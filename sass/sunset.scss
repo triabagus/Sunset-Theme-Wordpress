@@ -207,7 +207,7 @@ body {
         &.dropdown {
 
             a {
-                opacity: 1;
+                opacity: 0.7;
 
                 &:after {
                     content: '';
@@ -219,6 +219,7 @@ body {
                     background-color: transparent;
                     @include transform(translateY(0));
                     opacity: 1;
+
                 }
 
                 &:hover,
