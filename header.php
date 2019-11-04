@@ -20,7 +20,13 @@
             <link rel="pingback" href="<?php bloginfo('pingback_url');?>">
         <?php endif;?>
         <?php wp_head(); ?>
-    
+
+        <?php
+            $custom_css = esc_attr( get_option( 'sunset_css'));
+            if(!empty( $custom_css)):
+                echo '<style>'.$custom_css.'</style>';
+            endif;
+        ?>
     </head>
 <body <?php body_class(); ?>>
 
@@ -48,9 +54,9 @@
                                     'theme_location'    => 'primary',
                                     'container'         => false,
                                     'menu_class'        => 'nav nav-item',
-                                    'fallback_cb'    => '__return_false',
-                                    'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                                    'depth'          => 2,
+                                    'fallback_cb'       => '__return_false',
+                                    'items_wrap'        => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                    'depth'             => 2,
                                     'walker'            => new Sunset_Walker_Nav_Primary()
                                 ) );
                             ?>

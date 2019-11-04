@@ -21,7 +21,7 @@
 
 # Reverense 
 - [Guide Tutorial Build Wordpress Theme Premium](https://www.youtube.com/watch?v=IZdMWEjbsIo&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=2)
-
+- [Wordpress Developer Doc](https://developer.wordpress.org/themes/functionality/)
 - [Github reverensi](https://github.com/Alecaddd/Sunset-theme)
 - [Doc Bootsrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 # Bug Fixed
