@@ -382,3 +382,36 @@ h1 {
         }
     }
 }
+
+/*
+    Post Audio Format
+    -------------------------------
+*/
+.sunset-format-audio {
+    .entry-content {
+        iframe {
+            width: 100%;
+            height: 165px;
+        }
+    }
+
+    h1 {
+        font-size: 30px;
+
+        &.entry-title {
+            display: inline-block;
+            margin-right: 20px;
+
+            &:before,
+            &:after {
+                display: none;
+            }
+
+        }
+    }
+
+    .entry-meta {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+}

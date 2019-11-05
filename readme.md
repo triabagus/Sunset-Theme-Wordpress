@@ -26,7 +26,7 @@
 - [Doc Bootsrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 # Bug Fixed
 - [Download Ace Editor Build](https://triabagus.github.io/DownGit/#/home?url=https:%2F%2Fgithub.com%2Fajaxorg%2Face-builds%2Ftree%2Fmaster%2Fsrc)
-
+- [Get image url inside post wordpress](https://wordpress.stackexchange.com/questions/162402/get-image-url-inside-the-content-in-wordpress)
 # Sass
 [Installation Sass](https://sass-lang.com/install).
 run in terminal : 

@@ -9,6 +9,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'sunset-format-image '); ?> >
+    <?php 
+        if( sunset_get_attachment() ):
+    ?> 
     
     <header class="entry-header text-center background-image" style="background-image:url(<?php echo sunset_get_attachment(); ?>);">
 
@@ -23,6 +26,10 @@
         </div>
 
     </header>
+    
+    <?php 
+        endif; 
+    ?>
 
     <footer class="entry-footer">
         <?php echo sunset_posted_footer(); ?>
