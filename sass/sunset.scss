@@ -415,3 +415,20 @@ h1 {
         margin-bottom: 0;
     }
 }
+
+/*
+    Post Video Format
+    -------------------------------
+*/
+
+.sunset-format-video {
+    header {
+        margin-top: 40px;
+
+        h1 {
+            &.entry-title {
+                margin-top: 20px;
+            }
+        }
+    }
+}
