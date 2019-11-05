@@ -31,5 +31,7 @@
 [Installation Sass](https://sass-lang.com/install).
 run in terminal : 
 ```
+    sass --watch sass:css --style compressed 
+    or
     sass --watch sass:css
 ```

@@ -96,3 +96,24 @@ function sunset_posted_footer()
     return '<div class="post-footer-container"><div class="row"><div class="col-12 col-sm-6">'.$tags.'</div><div class="col-12 col-sm-6 text-right">'.$comments.'</div></div></div>';
 }
 
+function sunset_get_attachment(){
+
+    $output = '';
+
+    if( has_post_thumbnail() ):
+        $output = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
+    else:
+        
+        $post = get_post( get_the_ID() ); // get the post object
+        $content = $post->post_content; // we need just the content
+        $regex = '/src="([^"]*)"/'; // we need a expression to match things
+        preg_match_all( $regex, $content, $matches ); // we want all matches
+        $matches = array_reverse($matches); // reversing the matches array
+        
+        $output = implode($matches[0]); //string to array 
+
+        wp_reset_postdata();
+    endif;
+
+    return $output;
+}
