@@ -194,7 +194,11 @@ a {
     -------------------------------
 */
 article {
-    margin-bottom: 80px;
+    margin: 40px 0px;
+
+    &:first-child {
+        padding-top: 40px;
+    }
 }
 
 h1 {
@@ -203,7 +207,7 @@ h1 {
 
     &.entry-title {
         line-height: 1.5em;
-        margin: 50px 0 0px;
+        margin: 0;
         padding: 0;
 
         &:before,
@@ -256,7 +260,6 @@ h1 {
 
 .standard-featured {
     height: 330px;
-    display: block;
     position: relative;
 
     &:after {
@@ -270,7 +273,6 @@ h1 {
         left: 0;
         background-color: rgba(0, 0, 0, 0.15);
         box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.35);
-
     }
 }
 
@@ -423,12 +425,33 @@ h1 {
 
 .sunset-format-video {
     header {
-        margin-top: 40px;
 
         h1 {
             &.entry-title {
                 margin-top: 20px;
             }
+        }
+    }
+}
+
+/*
+    Post Gallery Format
+    -------------------------------
+*/
+.sunset-format-gallery {
+    header {
+        h1 {
+            &.entry-title {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .standard-featured {
+        height: 500px;
+
+        &:after {
+            background-color: transparent;
         }
     }
 }

@@ -96,11 +96,11 @@ function sunset_posted_footer()
     return '<div class="post-footer-container"><div class="row"><div class="col-12 col-sm-6">'.$tags.'</div><div class="col-12 col-sm-6 text-right">'.$comments.'</div></div></div>';
 }
 
-function sunset_get_attachment(){
+function sunset_get_attachment($num = 1){
 
     $output = '';
 
-    if( has_post_thumbnail() ):
+    if( has_post_thumbnail() && $num == 1):
         $output = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
     else:
         
@@ -108,9 +108,18 @@ function sunset_get_attachment(){
         $content = $post->post_content; // we need just the content
         $regex = '/src="([^"]*)"/'; // we need a expression to match things
         preg_match_all( $regex, $content, $matches ); // we want all matches
-        $matches = array_reverse($matches); // reversing the matches array
         
-        $output = implode($matches[0]); //string to array 
+        $count = substr_count($content, '<img'); //count img how much
+        
+        if($count == 1 && $num == 1){
+            $matches = array_reverse($matches); // reversing the matches array
+            $output = implode($matches[0]); //string to array
+        }else{
+            $matches = array_reverse($matches); // reversing the matches array
+            $implode = implode($matches[0]," ");// implode array to string
+            $output = explode(" ",$implode);//explode string to array again
+            // print_r(explode(" ",$implode));//explode string to array again
+        }
 
         wp_reset_postdata();
     endif;

@@ -3,7 +3,7 @@
 @package sunsettheme
 
     ===================
-        Image POST FORMAT
+        IMAGE POST FORMAT
     ===================
 */
 ?>
