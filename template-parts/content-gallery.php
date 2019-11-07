@@ -15,7 +15,7 @@
             if( sunset_get_attachment() ):
                 $attachments = sunset_get_attachment();
         ?> 
-            <div id="postGallery<?php the_ID(); ?>" class="carousel slide" data-ride="carousel">
+            <div id="postGallery<?php the_ID(); ?>" class="carousel slide sunset-carousel-thumb" data-ride="carousel">
                 
                 <ul class="carousel-indicators">
                     <?php
@@ -33,27 +33,43 @@
                 <div class="carousel-inner">
 
                     <?php
-                        $i = 0;
-                        foreach($attachments as $attachment):
-                        $active = ($i == 0 ? 'active' : '');
+                        $count = count($attachments)-1;
+                        for($i = 0;$i <= $count;$i++):
+                            $active = ($i == 0 ? 'active' : '');
+                            
+                            $n = ($i == $count ? 0 : $i+1);
+                            $nextImage = $attachments[$n];
+                            $p = ($i == 0 ? $count : $i-1);
+                            $prevImage = $attachments[$p];
                     ?>
-                        <div class="carousel-item <?php echo $active; ?> background-image standard-featured" style="background-image:url(<?php  echo $attachment; ?>);"></div><!-- .carousel-item -->
-                    <?php
-                        $i++;
-                        endforeach;
+                        <div class="carousel-item <?php echo $active; ?> background-image standard-featured" style="background-image:url(<?php  echo $attachments[$i]; ?>);">
+                            <div class="hide next-image-preview" data-image="<?php echo $nextImage; ?>"></div>
+                            <div class="hide prev-image-preview" data-image="<?php echo $prevImage; ?>"></div>
+                        </div><!-- .carousel-item -->                    
+                    <?php                        
+                        endfor;
                     ?>
 
                 </div><!-- .carousel-inner -->
-                    
-                    <a class="carousel-control-prev" href="#postGallery<?php the_ID(); ?>" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                
+                <!-- Carousel Control -->
+                <a class="left carousel-control-prev" href="#postGallery<?php the_ID(); ?>" role="button" data-slide="prev">
+                    <div class="preview-container">
+                        <span class="thumbnail-container background-image"></span>
+                        <span class="sunset-icon sunset-chevron-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#postGallery<?php the_ID(); ?>" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    </div><!-- .preview-container prev-->
+                </a>
 
+                <a class="right carousel-control-next" href="#postGallery<?php the_ID(); ?>" role="button" data-slide="next">
+                    <div class="preview-container">
+                        <span class="thumbnail-container background-image"></span>
+                        <span class="sunset-icon sunset-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </div><!-- .preview-container next-->
+                </a>
+                <!-- End Carousel Control -->
+                        
             </div><!-- .carousel -->
 
         <?php endif; ?>

@@ -454,4 +454,65 @@ h1 {
             background-color: transparent;
         }
     }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        font-size: 30px;
+        @extend %text-shadow;
+
+        .preview-container {
+            position: relative;
+            display: block;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0);
+            line-height: 0;
+            @include animate(background-color, 320ms);
+
+            .thumbnail-container {
+                position: absolute;
+                display: block;
+                height: 62px;
+                width: 62px;
+                border-radius: 50%;
+                background-color: red;
+                top: 4px;
+                @include animate(transform, 320ms);
+                @include transform(scale(0));
+            }
+        }
+
+        &.right {
+            .preview-container {
+                width: -webkit-fill-available;
+                padding-left: 60px;
+                border-radius: 35.5px 0 0 35.5px;
+
+                .thumbnail-container {
+                    left: 1px;
+                }
+            }
+        }
+
+        &.left {
+            .preview-container {
+                width: -webkit-fill-available;
+                padding-right: 60px;
+                border-radius: 0 35.5px 35.5px 0;
+
+                .thumbnail-container {
+                    right: 1px;
+                }
+            }
+        }
+
+        &:hover {
+            .preview-container {
+                background-color: rgba(0, 0, 0, 0.8);
+
+                .thumbnail-container {
+                    @include transform(scale(1));
+                }
+            }
+        }
+    }
 }
