@@ -20,3 +20,23 @@
     --o-transform: $val;
     transform: $val;
 }
+
+@mixin respond-to($media) {
+    @if $media==phone-screens {
+        @media only screen and (max-width:$break-phone) {
+            @content;
+        }
+    }
+
+    @else if $media==tablet-screens {
+        @media only screen and (max-width:$break-tablet) {
+            @content;
+        }
+    }
+
+    @else if $media==laptop-screens {
+        @media only screen and (max-width:$break-laptop-xs) {
+            @content;
+        }
+    }
+}

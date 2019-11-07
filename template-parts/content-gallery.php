@@ -12,6 +12,7 @@
     <header class="entry-header text-center">
 
         <?php 
+
             if( sunset_get_attachment() ):
                 $attachments = sunset_get_attachment();
         ?> 
@@ -43,6 +44,19 @@
                             $prevImage = $attachments[$p];
                     ?>
                         <div class="carousel-item <?php echo $active; ?> background-image standard-featured" style="background-image:url(<?php  echo $attachments[$i]; ?>);">
+                            
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5> 
+                                <?php 
+                                    $postCaption = get_post( get_the_ID() ); // get the post object
+                                    $contentCaption = $postCaption->post_content; // we need just the content
+                                    $regexCaption = '/<figcaption[\w\s]*[^>]*>(.*?)<\/figcaption>/'; // we need a expression to match things
+                                    preg_match_all( $regexCaption, $contentCaption, $matchesCaption );
+                                    print_r($matchesCaption[1][$i]);
+                                ?> 
+                                </h5>
+                            </div>
+
                             <div class="hide next-image-preview" data-image="<?php echo $nextImage; ?>"></div>
                             <div class="hide prev-image-preview" data-image="<?php echo $prevImage; ?>"></div>
                         </div><!-- .carousel-item -->                    

@@ -474,10 +474,14 @@ h1 {
                 height: 62px;
                 width: 62px;
                 border-radius: 50%;
-                background-color: red;
+                background-color: transparent;
                 top: 4px;
                 @include animate(transform, 320ms);
                 @include transform(scale(0));
+
+                @include respond-to(laptop-screens) {
+                    display: none;
+                }
             }
         }
 
@@ -486,6 +490,10 @@ h1 {
                 width: -webkit-fill-available;
                 padding-left: 60px;
                 border-radius: 35.5px 0 0 35.5px;
+
+                @include respond-to(tablet-screens) {
+                    padding-left: 0;
+                }
 
                 .thumbnail-container {
                     left: 1px;
@@ -499,6 +507,10 @@ h1 {
                 padding-right: 60px;
                 border-radius: 0 35.5px 35.5px 0;
 
+                @include respond-to(tablet-screens) {
+                    padding-right: 0;
+                }
+
                 .thumbnail-container {
                     right: 1px;
                 }
@@ -509,10 +521,26 @@ h1 {
             .preview-container {
                 background-color: rgba(0, 0, 0, 0.8);
 
+                @include respond-to(phone-screens) {
+                    background-color: transparent;
+                }
+
                 .thumbnail-container {
                     @include transform(scale(1));
                 }
             }
         }
     }
+
+    .carousel-caption {
+        @include animate(transform, 320ms);
+        @include transform(translateY(100%));
+    }
+
+    &:hover {
+        .carousel-caption {
+            @include transform(translateY(0));
+        }
+    }
+
 }

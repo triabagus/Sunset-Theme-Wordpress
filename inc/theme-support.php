@@ -99,6 +99,7 @@ function sunset_posted_footer()
 function sunset_get_attachment($num = 1){
 
     $output = '';
+    $output2 = '';
 
     if( has_post_thumbnail() && $num == 1):
         $output = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
@@ -119,11 +120,12 @@ function sunset_get_attachment($num = 1){
             $implode = implode($matches[0]," ");// implode array to string
             $output = explode(" ",$implode);//explode string to array again
             // print_r(explode(" ",$implode));//explode string to array again
+
         }
-
         wp_reset_postdata();
-    endif;
 
+    endif;
+    
     return $output;
 }
 
