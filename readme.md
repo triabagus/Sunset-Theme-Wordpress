@@ -19,6 +19,11 @@
 5. Paste your download theme in folder /wp-content/themes/
 6. So you refresh and enjoy free theme.
 
+# Tech
+- Wordpress 5.2.4
+- Bootstrap 4
+- Jquery 3.4.1
+
 # Reverense 
 - [Guide Tutorial Build Wordpress Theme Premium](https://www.youtube.com/watch?v=IZdMWEjbsIo&list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX&index=2)
 - [Wordpress Developer Doc](https://developer.wordpress.org/themes/functionality/)

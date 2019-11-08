@@ -17,25 +17,12 @@
                 $attachments = sunset_get_attachment();
         ?> 
             <div id="postGallery<?php the_ID(); ?>" class="carousel slide sunset-carousel-thumb" data-ride="carousel">
-                
-                <ul class="carousel-indicators">
-                    <?php
-                        $x = 0;
-                        foreach($attachments as $attachment):
-                        $active = ($x == 0 ? 'active' : '');
-                    ?>
-                    <li data-target="#postGallery<?php the_ID(); ?>" data-slide-to="<?php echo $x; ?>" class="<?php echo $active; ?>"></li>
-                    <?php
-                        $x++;
-                        endforeach;
-                    ?>
-                </ul>
 
                 <div class="carousel-inner">
 
                     <?php
-                        $count = count($attachments)-1;
-                        for($i = 0;$i <= $count;$i++):
+                        $count = count($attachments) - 1;
+                        for($i = 0;$i <= $count; $i++):
                             $active = ($i == 0 ? 'active' : '');
                             
                             $n = ($i == $count ? 0 : $i+1);
@@ -52,7 +39,11 @@
                                     $contentCaption = $postCaption->post_content; // we need just the content
                                     $regexCaption = '/<figcaption[\w\s]*[^>]*>(.*?)<\/figcaption>/'; // we need a expression to match things
                                     preg_match_all( $regexCaption, $contentCaption, $matchesCaption );
-                                    print_r($matchesCaption[1][$i]);
+                                    if(!empty( $matchesCaption[0][$i]) ){
+                                        print_r($matchesCaption[0][$i]);
+                                    }else{
+                                        echo '';
+                                    }
                                 ?> 
                                 </h5>
                             </div>

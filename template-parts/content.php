@@ -22,13 +22,20 @@
     <div class="entry-content">
 
         <?php 
-            if( sunset_get_attachment() ):
-        ?> 
+            $attachments = sunset_get_attachment(); 
+            if(! empty($attachments) && is_array($attachments) ):
+        ?>
             <a class="standard-featured-link" href="<?php the_permalink(); ?>">
-                <div class="standard-featured background-image" style="background-image:url(<?php echo sunset_get_attachment(); ?>);">
+                <div class="standard-featured background-image" style="background-image:url(<?php  echo $attachments[0]; ?>);">
                 </div>
             </a>
-
+        <?php   
+            elseif(! empty($attachments)):
+        ?> 
+            <a class="standard-featured-link" href="<?php the_permalink(); ?>">
+                <div class="standard-featured background-image" style="background-image:url(<?php  echo $attachments; ?>);">
+                </div>
+            </a>
         <?php endif; ?>
 
         <div class="entry-excerpt">

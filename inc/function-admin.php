@@ -124,7 +124,7 @@ function sunset_activate_contact()
 function sunset_post_formats()
 {
     $options = get_option('post_formats');
-    $formats = array('aside', 'gallery', 'link', 'image', 'quotes', 'status', 'video', 'audio', 'chat');
+    $formats = array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat');
     $output = '';
 
     foreach ($formats as $format) {

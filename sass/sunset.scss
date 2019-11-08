@@ -544,3 +544,42 @@ h1 {
     }
 
 }
+
+/*
+    Post Quote Format
+    -------------------------------
+*/
+.sunset-format-quote {
+    .quote-content {
+        font-size: 42;
+        font-weight: 100;
+        line-height: 1.3em;
+        letter-spacing: 0.03em;
+
+        p {
+
+            &:before,
+            &:after {
+                content: '';
+                display: inline-block;
+                position: relative;
+                color: #ccc;
+            }
+
+            &:before {
+                content: '" ';
+            }
+
+            &:after {
+                content: ' "';
+            }
+        }
+
+    }
+
+    .quote-author {
+        font-size: 20px;
+        color: #ccc;
+        letter-spacing: 0.06em;
+    }
+}

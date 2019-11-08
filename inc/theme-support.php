@@ -99,9 +99,8 @@ function sunset_posted_footer()
 function sunset_get_attachment($num = 1){
 
     $output = '';
-    $output2 = '';
 
-    if( has_post_thumbnail() && $num == 1):
+    if( has_post_thumbnail() && $num == 1 ):
         $output = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
     else:
         
@@ -112,18 +111,15 @@ function sunset_get_attachment($num = 1){
         
         $count = substr_count($content, '<img'); //count img how much
         
-        if($count == 1 && $num == 1){
+        if($count == 1){
             $matches = array_reverse($matches); // reversing the matches array
             $output = implode($matches[0]); //string to array
-        }else{
+        }elseif($count > 1){
             $matches = array_reverse($matches); // reversing the matches array
             $implode = implode($matches[0]," ");// implode array to string
             $output = explode(" ",$implode);//explode string to array again
-            // print_r(explode(" ",$implode));//explode string to array again
-
         }
         wp_reset_postdata();
-
     endif;
     
     return $output;
