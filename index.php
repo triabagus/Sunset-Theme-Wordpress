@@ -8,7 +8,7 @@
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 
-            <div class="container">
+            <div class="container sunset-posts-container">
 
                 <div class="row justify-content-center">
                     <div class="col-10">
@@ -27,7 +27,14 @@
                 </div><!-- .row -->
 
             </div><!-- .container -->
-
+            
+            <form method="post">
+                <div class="container text-center">
+                    <a class="btn btn-lg btn-primary sunset-load-more" data-page="1" data-url="<?= admin_url('admin-ajax.php');?>">
+                        <span class="sunset-icon sunset-loading"> Load More</span>
+                    </a>
+                </div><!-- .container -->
+            </form>
         </main>
     </div><!-- #primary -->
 
