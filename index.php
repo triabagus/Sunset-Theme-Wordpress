@@ -30,8 +30,9 @@
             
             <form method="post">
                 <div class="container text-center">
-                    <a class="btn btn-lg btn-primary sunset-load-more" data-page="1" data-url="<?= admin_url('admin-ajax.php');?>">
-                        <span class="sunset-icon sunset-loading"> Load More</span>
+                    <a class="btn-sunset-load sunset-load-more" data-page="1" data-url="<?= admin_url('admin-ajax.php');?>">
+                        <span class="sunset-icon sunset-loading"></span>
+                        <span class="text">Load More</span>
                     </a>
                 </div><!-- .container -->
             </form>

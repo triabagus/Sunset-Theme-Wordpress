@@ -666,3 +666,39 @@ h1 {
     display: block;
     color: #fff;
 }
+
+/*
+    Ajax Loading Section
+    -------------------------------
+*/
+.btn-sunset-load {
+    display: block;
+    width: 200px;
+    color: #222;
+    font-size: 30px;
+    margin: 0 auto;
+    cursor: pointer;
+    opacity: 0.5;
+    @include animate(opacity, 320ms);
+
+    &:hover,
+    &:focus,
+    &.loading {
+        opacity: 1;
+    }
+
+    &.loading {
+        cursor: default;
+    }
+
+    span {
+        display: block;
+    }
+}
+
+.spin {
+    animation: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
