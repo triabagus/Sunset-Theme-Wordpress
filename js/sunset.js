@@ -1,9 +1,13 @@
 jQuery(document).ready(function ($) {
     //custom Sunset scripts
 
+    /**init function */
     revealPosts();
 
+    var last_scroll = 0;
+
     function sunset_get_thumbs() { // wrap it with a new function
+        /**variable function */
         var carousel = '.sunset-carousel-thumb';
 
         sunset_get_bs_thumbs(carousel);
@@ -71,7 +75,24 @@ jQuery(document).ready(function ($) {
         });
 
     });
+    /**Scroll  function*/
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
 
+        if (Math.abs(scroll - last_scroll) > $(window).height() * 0.1) {
+            last_scroll = scroll;
+
+            $('.page-limit').each(function (index) {
+
+                if (isVisible($(this))) {
+                    console.log('visible');
+                    history.replaceState(null, null, $(this).attr("data-page"));
+                    return (false);
+                }
+            });
+        }
+
+    });
     /** Helper function */
     function revealPosts() {
         var posts = $('article:not(.reveal)');
@@ -90,5 +111,13 @@ jQuery(document).ready(function ($) {
         }, 200);
     }
 
+    function isVisible(element) {
 
+        var scroll_pos = $(window).scrollTop();
+        var window_height = $(window).height();
+        var el_top = $(element).offset().top;
+        var el_height = $(element).height();
+        var el_bottom = el_top + el_height;
+        return ((el_bottom - el_height * 0.25 > scroll_pos) && (el_top < (scroll_pos + 0.5 * window_height)));
+    }
 });

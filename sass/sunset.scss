@@ -195,10 +195,6 @@ a {
 */
 article {
     margin: 40px 0px;
-
-    &:first-child {
-        padding-top: 40px;
-    }
 }
 
 h1 {
@@ -673,6 +669,10 @@ h1 {
 */
 .sunset-posts-container {
     article {
+        &:first-child {
+            padding-top: 40px;
+        }
+
         @include animate (all, 320ms);
         @include transform(translateY(100px));
         opacity: 0;
