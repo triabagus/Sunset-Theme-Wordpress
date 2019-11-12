@@ -671,6 +671,19 @@ h1 {
     Ajax Loading Section
     -------------------------------
 */
+.sunset-posts-container {
+    article {
+        @include animate (all, 320ms);
+        @include transform(translateY(100px));
+        opacity: 0;
+
+        &.reveal {
+            @include transform(translateY(0));
+            opacity: 1;
+        }
+    }
+}
+
 .btn-sunset-load {
     display: block;
     width: 200px;
