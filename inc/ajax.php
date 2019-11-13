@@ -16,6 +16,13 @@ add_action('wp_ajax_sunset_load_more', 'sunset_load_more');
 function sunset_load_more()
 {
     $paged = $_POST["page"] + 1;
+    $prev = $_POST["prev"];
+
+    echo $prev;
+
+    if( $prev == 1 && $_POST["page"] != 1){
+        $paged = $_POST["page"] - 1;
+    }
 
     $query = new    WP_QUERY( array(
         'post_type' => 'post',
@@ -32,6 +39,10 @@ function sunset_load_more()
         endwhile;
         
         echo '</div>';
+    else:
+
+        echo 0;
+    
     endif;
 
     wp_reset_postdata();
@@ -42,16 +53,15 @@ function sunset_load_more()
 function sunset_check_paged($num = null)
 {
     $output = '';
-
-    if( is_paged() ){ 
-        $output = 'page/'. get_query_var('paged');
-    }
-
-    if($num == 1){
-        $paged = ( get_query_var( 'paged') == 0 ? 1 : get_query_var( 'paged') );
-        return $paged;
-    }else{
-        return $output; 
-    }
+	
+	if( is_paged() ){ $output = 'page/' . get_query_var( 'paged' ); }
+	
+	if( $num == 1 ){
+		$paged = ( get_query_var( 'paged' ) == 0 ? 1 : get_query_var( 'paged' ) );
+		return $paged;
+	} else {
+		return $output;
+	}
+	
     
 }

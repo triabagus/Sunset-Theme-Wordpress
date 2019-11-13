@@ -8,6 +8,19 @@
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 
+            <?php if( is_paged() ):?>
+
+            <form method="post">
+                <div class="container text-center container-load-previous">
+                    <a class="btn-sunset-load sunset-load-more" data-prev="1" data-page="<?= sunset_check_paged(1); ?>" data-url="<?= admin_url('admin-ajax.php');?>">
+                        <span class="sunset-icon sunset-loading"></span>
+                        <span class="text">Load Previous</span>
+                    </a>
+                </div><!-- .container -->
+            </form>    
+            
+            <?php endif;?>
+            
             <div class="container sunset-posts-container">
 
                 <div class="row justify-content-center">
