@@ -43,10 +43,14 @@ jQuery(document).ready(function ($) {
         var newPage = page + 1;
         var ajaxUrl = that.data('url');
         var prev = that.data('prev');
-        console.log(prev);
+        var archive = that.data('archive');
 
         if (typeof prev === 'undefined') {
             prev = 0;
+        }
+
+        if (typeof archive === 'undefined') {
+            archive = 0;
         }
 
         that.addClass('loading').find('.text').slideUp(320);
@@ -59,6 +63,7 @@ jQuery(document).ready(function ($) {
             data: {
                 page: page,
                 prev: prev,
+                archive: archive,
                 action: 'sunset_load_more'
             },
             error: function (response) {
