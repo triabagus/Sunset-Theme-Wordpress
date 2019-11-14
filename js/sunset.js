@@ -8,29 +8,29 @@ jQuery(document).ready(function ($) {
 
     function sunset_get_thumbs() { // wrap it with a new function
         /**variable function */
-        var carousel = '.sunset-carousel-thumb';
+        $(document).on('click', '.sunset-carousel-thumb', function () {
+            var id = $("#" + $(this).attr("id"));
+            $(id).on('slid.bs.carousel', function () {
+                sunset_get_bs_thumbs(id);
+            });
+        });
 
-        sunset_get_bs_thumbs(carousel);
-
-        $(carousel).on('slid.bs.carousel', function () {
-            sunset_get_bs_thumbs(carousel);
+        $(document).on('mouseenter', '.sunset-carousel-thumb', function () {
+            var id = $("#" + $(this).attr("id"));
+            sunset_get_bs_thumbs(id);
         });
     } // END sunset_get_thumbs()
 
-    function sunset_get_bs_thumbs(carousel) {
+    function sunset_get_bs_thumbs(id) {
 
-        $(carousel).each(function () {
+        var nextThumb = $(id).find('.carousel-item.active').find('.next-image-preview').data('image');
+        var prevThumb = $(id).find('.carousel-item.active').find('.prev-image-preview').data('image');
 
-            var nextThumb = $(this).find('.carousel-item.active').find('.next-image-preview').data('image');
-            var prevThumb = $(this).find('.carousel-item.active').find('.prev-image-preview').data('image');
-
-            $(this).find('.carousel-control-next').find('.thumbnail-container').css({
-                'background-image': 'url(' + nextThumb + ')'
-            });
-            $(this).find('.carousel-control-prev').find('.thumbnail-container').css({
-                'background-image': 'url(' + prevThumb + ')'
-            });
-
+        $(id).find('.carousel-control-next').find('.thumbnail-container').css({
+            'background-image': 'url(' + nextThumb + ')'
+        });
+        $(id).find('.carousel-control-prev').find('.thumbnail-container').css({
+            'background-image': 'url(' + prevThumb + ')'
         });
 
     }

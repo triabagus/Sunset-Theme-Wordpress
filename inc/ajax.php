@@ -32,39 +32,32 @@ function sunset_load_more()
     if( $archive != '0'){
 
         $archVal = explode( '/', $archive);
-        
-        if( in_array("category", $archVal) ){
+        $flipped = array_flip($archVal);
 
-            $type       = "category_name";
-            $currKey    = array_keys( $archVal, "category");
-            $nextKey    = $currKey[0]+1;
-            $value      = $archVal[$nextKey];
+        switch ( isset($flipped) ) {
+            case $flipped["category"]:
+                $type = "category_name";
+                $key = "category";
+                break;
             
-            $args[ $type ] = $value;
+            case $flipped["tag"]:
+                $type = "tag";
+                $key = "tag";
+                break;
+            case $flipped["author"]:
+                $type = "author";
+                $key = "author";
+                break;
         }
 
-        if( in_array("tag", $archVal) ){
+        $currKey = array_keys($archVal, $key);
+        $nextKey = $currKey[0]+1;
+        $value = $archVal[ $nextKey];
 
-            $type       = "tag";
-            $currKey    = array_keys( $archVal, "tag");
-            $nextKey    = $currKey[0]+1;
-            $value      = $archVal[$nextKey];
-            
-            $args[ $type ] = $value;
-        }
-
-        if( in_array("author", $archVal) ){
-
-            $type       = "author";
-            $currKey    = array_keys( $archVal, "author");
-            $nextKey    = $currKey[0]+1;
-            $value      = $archVal[$nextKey];
-            
-            $args[ $type ] = $value;
-        }
+        $args[ $type] = $value;
 
         //check page trail and remove "page" value
-        if( in_array( "page", $archVal ) ){
+        if( isset( $flipped["page"], $archVal ) ){
             $pageVal    = explode("page", $archive);
             $page_trail = $pageVal[0]; 
         }else{
