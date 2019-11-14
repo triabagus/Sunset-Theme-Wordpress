@@ -16,7 +16,7 @@
 
             <form method="post">
                 <div class="container text-center container-load-previous">
-                    <a class="btn-sunset-load sunset-load-more" data-prev="1" data-archive="<?= $_SERVER["REQUEST_URI"]; ?>" data-page="<?= sunset_check_paged(1); ?>" data-url="<?= admin_url('admin-ajax.php');?>">
+                    <a class="btn-sunset-load sunset-load-more" data-prev="1" data-archive="<?=  sunset_grab_current_uri(); ?>" data-page="<?= sunset_check_paged(1); ?>" data-url="<?= admin_url('admin-ajax.php');?>">
                         <span class="sunset-icon sunset-loading"></span>
                         <span class="text">Load Previous</span>
                     </a>
@@ -25,37 +25,31 @@
             
             <?php endif;?>
             
-            <div class="container sunset-posts-container">
-
-                <div class="row justify-content-center">
-                    <div class="col-10">
+            <div class="container sunset-posts-container px-5">
                     
-                        <?php
-                            if( have_posts() ):
-                                
-                                echo '<div class="page-limit" data-page="'.$_SERVER["REQUEST_URI"].'">';
+                <?php
+                    if( have_posts() ):
+                        
+                        echo '<div class="page-limit" data-page="'.$_SERVER["REQUEST_URI"].'">';
 
-                                while( have_posts() ): the_post();
-                                
-                                    // $class = 'reveal';
-                                    // set_query_var('post-class', $class);
-                                    
-                                    get_template_part('template-parts/content', get_post_format() );
-                                endwhile;
-                                
-                                echo '</div>';
+                        while( have_posts() ): the_post();
+                        
+                            // $class = 'reveal';
+                            // set_query_var('post-class', $class);
+                            
+                            get_template_part('template-parts/content', get_post_format() );
+                        endwhile;
+                        
+                        echo '</div>';
 
-                            endif;
-                        ?>
-
-                    </div><!-- .col-10 -->
-                </div><!-- .row -->
+                    endif;
+                ?>
 
             </div><!-- .container -->
             
             <form method="post">
                 <div class="container text-center">
-                    <a class="btn-sunset-load sunset-load-more" data-archive="<?= $_SERVER["REQUEST_URI"]; ?>" data-page="<?= sunset_check_paged(1); ?>" data-url="<?= admin_url('admin-ajax.php');?>">
+                    <a class="btn-sunset-load sunset-load-more" data-archive="<?= sunset_grab_current_uri(); ?>" data-page="<?= sunset_check_paged(1); ?>" data-url="<?= admin_url('admin-ajax.php');?>">
                         <span class="sunset-icon sunset-loading"></span>
                         <span class="text">Load More</span>
                     </a>

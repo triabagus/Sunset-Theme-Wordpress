@@ -32,10 +32,45 @@ function sunset_load_more()
     if( $archive != '0'){
 
         $archVal = explode( '/', $archive);
-        $type = ( $archVal[2] == "category" ? "category_name" : $archVal[2] );
-        $args[$type] = $archVal[3];
-        $page_trail = '/'. $archVal[1].'/'. $archVal[2].'/'.$archVal[3].'/';
         
+        if( in_array("category", $archVal) ){
+
+            $type       = "category_name";
+            $currKey    = array_keys( $archVal, "category");
+            $nextKey    = $currKey[0]+1;
+            $value      = $archVal[$nextKey];
+            
+            $args[ $type ] = $value;
+        }
+
+        if( in_array("tag", $archVal) ){
+
+            $type       = "tag";
+            $currKey    = array_keys( $archVal, "tag");
+            $nextKey    = $currKey[0]+1;
+            $value      = $archVal[$nextKey];
+            
+            $args[ $type ] = $value;
+        }
+
+        if( in_array("author", $archVal) ){
+
+            $type       = "author";
+            $currKey    = array_keys( $archVal, "author");
+            $nextKey    = $currKey[0]+1;
+            $value      = $archVal[$nextKey];
+            
+            $args[ $type ] = $value;
+        }
+
+        //check page trail and remove "page" value
+        if( in_array( "page", $archVal ) ){
+            $pageVal    = explode("page", $archive);
+            $page_trail = $pageVal[0]; 
+        }else{
+            $page_trail = $archive;
+        }
+
     }else{
         $page_trail = get_site_url().'/';
     }

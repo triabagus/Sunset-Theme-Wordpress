@@ -21,31 +21,25 @@
             
             <?php endif;?>
             
-            <div class="container sunset-posts-container">
-
-                <div class="row justify-content-center">
-                    <div class="col-10">
+            <div class="container sunset-posts-container px-5">
                     
-                        <?php
-                            if( have_posts() ):
-                                
-                                echo '<div class="page-limit" data-page="'.get_site_url().'/'. sunset_check_paged() .'">';
+                <?php
+                    if( have_posts() ):
+                        
+                        echo '<div class="page-limit" data-page="'.get_site_url().'/'. sunset_check_paged() .'">';
 
-                                while( have_posts() ): the_post();
-                                
-                                    // $class = 'reveal';
-                                    // set_query_var('post-class', $class);
-                                    
-                                    get_template_part('template-parts/content', get_post_format() );
-                                endwhile;
-                                
-                                echo '</div>';
+                        while( have_posts() ): the_post();
+                        
+                            // $class = 'reveal';
+                            // set_query_var('post-class', $class);
+                            
+                            get_template_part('template-parts/content', get_post_format() );
+                        endwhile;
+                        
+                        echo '</div>';
 
-                            endif;
-                        ?>
-
-                    </div><!-- .col-10 -->
-                </div><!-- .row -->
+                    endif;
+                ?>
 
             </div><!-- .container -->
             
