@@ -735,7 +735,8 @@ h1 {
     line-height: 1.7em;
 
     a,
-    .sunset-tooltip {
+    .sunset-tooltip,
+    .sunset-popover {
         cursor: pointer;
         color: #ff9d1d;
 
@@ -752,5 +753,18 @@ h1 {
     b,
     strong {
         font-weight: 500;
+    }
+}
+
+.post-link-nav {
+    padding: 10px 0;
+
+    a {
+        padding: 0 5px;
+
+        &:hover,
+        &:focus {
+            color: #ff9d1d;
+        }
     }
 }
