@@ -132,6 +132,9 @@ jQuery(document).ready(function ($) {
 
     /** Helper function */
     function revealPosts() {
+
+        $('[data-toggle="tooltip"]').tooltip();
+
         var posts = $('article:not(.reveal)');
         var i = 0;
 
