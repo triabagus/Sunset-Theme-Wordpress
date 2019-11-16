@@ -25,27 +25,7 @@ if( post_password_required() ){
         ?>
     </h2>
 
-    <?php
-        if( get_comment_pages_count() > 1 && get_option( 'page_comments') ): 
-    ?>
-        <nav id="comment-nav-top" class="comment-navigation" role="navigation">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <div class="post-link-nav">
-                        <span class="sunset-icon sunset-chevron-left" aria-hidden="true"></span>
-                        <?php previous_comments_link( esc_html__( 'Older Comments', 'sunsettheme'))?>
-                    </div>
-                </div>
-                
-                <div class="col-xs-12 col-sm-6 text-right">
-                    <div class="post-link-nav">
-                        <span class="sunset-icon sunset-chevron-right" aria-hidden="true"></span>
-                        <?php next_comments_link( esc_html__( 'Newer Comments', 'sunsettheme'))?>
-                    </div>
-                </div>
-            </div><!-- .row -->
-        </nav>
-    <?php endif; ?>
+    <?php sunset_get_post_navigation(); ?>
     
     <ol class="comment-list">
 
@@ -73,27 +53,7 @@ if( post_password_required() ){
     
     </ol>
     
-    <?php
-        if( get_comment_pages_count() > 1 && get_option( 'page_comments') ): 
-    ?>
-        <nav id="comment-nav-top" class="comment-navigation" role="navigation">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <div class="post-link-nav">
-                        <span class="sunset-icon sunset-chevron-left" aria-hidden="true"></span>
-                        <?php previous_comments_link( esc_html__( 'Older Comments', 'sunsettheme'))?>
-                    </div>
-                </div>
-                
-                <div class="col-xs-12 col-sm-6 text-right">
-                    <div class="post-link-nav">
-                        <span class="sunset-icon sunset-chevron-right" aria-hidden="true"></span>
-                        <?php next_comments_link( esc_html__( 'Newer Comments', 'sunsettheme'))?>
-                    </div>
-                </div>
-            </div><!-- .row -->
-        </nav>
-    <?php endif; ?>
+    <?php sunset_get_post_navigation(); ?>
 
         <?php if( !comments_open() && get_comments_number() ): ?>
             <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'sunsettheme'); ?></p>
@@ -101,5 +61,25 @@ if( post_password_required() ){
 
     <?php endif;?>
     
-    <?php comment_form(); ?>
+
+    <?php
+        $fields = array(
+            'author' =>
+                '<div class="form-group"><label for="author">'.__( 'Name', 'domainreference').'</label><span class="required">*</span><input id="author" name="author" type="text" class="form-control" value="'.esc_attr( $commenter['comment_author']).'" required></div>',
+            'email' =>
+                '<div class="form-group"><label for="email">'.__( 'Email', 'domainreference').'</label><span class="required">*</span><input id="email" name="email" type="email" class="form-control" value="'.esc_attr( $commenter['comment_author_email']).'" required></div>',
+            'url' =>
+                '<div class="form-group"><label for="url">'.__( 'Website', 'domainreference').'</label><input id="url" name="url" type="text" class="form-control" value="'.esc_attr( $commenter['comment_author_url']).'"></div>',
+            
+        );
+
+        $args   = array(
+            'class_submit'      => 'btn btn-block btn-lg btn-warning',
+            'label_submit'      => __( 'Submit Comment'),
+            'comment_field'     => '<div class="form-group"><label for="comment">'._x('Comment', 'noun').'</label><span class="required">*</span><textarea id="comment" class="form-control" name="comment" rows="4" required></textarea></div>',
+            'fields'            => apply_filters('comment_form_default_fields', $fields)
+        );
+
+        comment_form( $args);
+    ?>
 </div><!-- .comments-area -->
