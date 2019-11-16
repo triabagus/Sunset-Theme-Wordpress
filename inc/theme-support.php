@@ -40,6 +40,7 @@ function sunset_register_nav_menu()
 
 add_action('after_setup_theme', 'sunset_register_nav_menu');
 
+//Active Boostrap 4 nav menu
 function add_link_atts($atts) {
     $atts['class'] = "nav-link";
     return $atts;
@@ -47,6 +48,8 @@ function add_link_atts($atts) {
 
 add_filter( 'nav_menu_link_attributes', 'add_link_atts');
 
+//Active HTML5 feature
+add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption') );
 /*
 
     ===================
