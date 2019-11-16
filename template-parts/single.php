@@ -26,7 +26,7 @@
         ?>
 
     </div><!-- .entry-content -->
-
+    
     <footer class="entry-footer">
         <?php echo sunset_posted_footer(); ?>
     </footer>
