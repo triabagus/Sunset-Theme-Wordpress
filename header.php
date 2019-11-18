@@ -29,7 +29,7 @@
         ?>
     </head>
 <body <?php body_class(); ?>>
-    
+    <!-- sidebar-closed -->
     <div class="sunset-sidebar sidebar-closed">
         <div class="sunset-sidebar-container">
             

@@ -8,9 +8,10 @@
 */
 @import 'base/variables'; //variables
 @import 'base/mixins'; //mixins
-@import 'base/fonticon'; //font icons
 @import 'base/placeholders'; //placeholder
+@import 'base/fonticon'; //font icons
 @import 'base/wordpress'; //wordpress default
+@import 'admin/sidebar'; //admin classes
 
 /* 
 	Generic 
@@ -938,7 +939,7 @@ a.comment-reply-link {
     }
 
     a {
-        color: $orange;
+        color: #fff;
     }
 }
 
