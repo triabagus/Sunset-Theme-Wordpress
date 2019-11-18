@@ -915,3 +915,24 @@ a.comment-reply-link {
 .comment-respond {
     margin-top: 60px;
 }
+
+/* 
+	Sidebar section
+	------------------------------------------------
+*/
+.sunset-sidebar {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1f1f1f;
+    color: #fff;
+    width: 100%;
+    max-width: 300px;
+    height: 100vh;
+
+    a {
+        color: #ff9d1d;
+    }
+}
