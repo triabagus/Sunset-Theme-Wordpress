@@ -86,6 +86,20 @@ function sunset_tag_cloud_font_change( $args)
 add_filter( 'widget_tag_cloud_args', 'sunset_tag_cloud_font_change');
 
 /*
+	Categories WordPress Custom
+*/
+
+function sunset_list_categories_output_change( $links)
+{
+	$links = str_replace('</a> (', '</a><span>',  $links);
+	$links = str_replace(')', '</span>', $links);
+
+	return $links;
+}
+
+add_filter( 'wp_list_categories', 'sunset_list_categories_output_change');
+
+/*
 	Save Posts View
 */
 function sunset_save_post_views( $postID)
@@ -168,11 +182,14 @@ class Sunset_Popular_Posts_Widget extends WP_Widget
 			endif;
 
 			if( $posts_query->have_posts()):
-				echo '<ul>';
+				// echo '<ul>';
 					while($posts_query->have_posts()) : $posts_query->the_post();
-						echo '<li>'.get_the_title().'</li>';
+						echo '<div class="media">';
+						echo '<div class="media-left"><img class="media-object" src="'.get_template_directory_uri().'/img/post-'.( get_post_format() ? get_post_format() : 'standard').'.png" alt="'.get_the_title().'" /> </div>';
+						echo '<div class="media-body">'.get_the_title().'</div>';
+						echo '</div>';
 					endwhile;
-				echo '</ul>';
+				// echo '</ul>';
 			endif;
 		echo $args['after_widget'];
 	}

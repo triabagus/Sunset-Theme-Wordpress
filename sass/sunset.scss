@@ -936,6 +936,7 @@ a.comment-reply-link {
     position: fixed;
     z-index: 3;
     display: none;
+    cursor: e-resize;
 }
 
 .sunset-sidebar {
@@ -1053,8 +1054,25 @@ h2.widgettitle {
 .cat-item {
     position: relative;
 
+    a,
+    span {
+        display: block;
+        line-height: 1em;
+    }
+
     a {
         padding: 4px 0;
+    }
+
+    span {
+        position: absolute;
+        right: 25px;
+        top: 2px;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 2px 7px 5px;
+        background-color: #7d7d7d;
+        border-radius: 10px;
     }
 
 }
