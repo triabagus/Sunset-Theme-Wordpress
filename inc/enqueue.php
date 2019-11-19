@@ -12,15 +12,29 @@
 function sunset_load_admin_scripts( $hook )
 {
     // echo $hook; //check your file hook page administration
+    
+    //register css admin section
+	wp_register_style( 'raleway-admin', 'https://fonts.googleapis.com/css?family=Raleway:200,300,500' );
+    wp_register_style('sunset_admin', get_template_directory_uri(). '/css/sunset.admin.css', array(), '1.0.0', 'all');
+    //register js admin section
+    wp_register_script('sunset-admin-script', get_template_directory_uri(). '/js/sunset.admin.js', array('jquery'), '1.0.0', true);
+
+    //PAGE ARRAY
+    $pages_array = array(
+        'toplevel_page_triabagus_sunset',
+        'sunset_page_triabagus_sunset_theme',
+        'sunset_page_triabagus_sunset_theme_contact',
+		'sunset_page_triabagus_sunset_css'
+    );
+
+    //PHP 7
+    if( in_array($hook, $pages_array)){
+        wp_enqueue_style( 'raleway-admin' );
+        wp_enqueue_style('sunset_admin');
+    }
 
     if('toplevel_page_triabagus_sunset' == $hook){
-
-        wp_register_style('sunset_admin', get_template_directory_uri(). '/css/sunset.admin.css', array(), '1.0.0', 'all');
-        wp_enqueue_style('sunset_admin');
-
         wp_enqueue_media();
-
-        wp_register_script('sunset-admin-script', get_template_directory_uri(). '/js/sunset.admin.js', array('jquery'), '1.0.0', true);
         wp_enqueue_script('sunset-admin-script');
     
     }elseif ('sunset_page_triabagus_sunset_css' == $hook) {
@@ -29,8 +43,6 @@ function sunset_load_admin_scripts( $hook )
         wp_enqueue_script('ace', get_template_directory_uri(). '/js/ace/ace.js', array('jquery'), '1.2.1', true);
         wp_enqueue_script('sunset-custom-css-script', get_template_directory_uri(). '/js/sunset.custom_css.js', array('jquery'), '1.0.0', true);
 
-    }else {
-        return;
     }
 }
 
