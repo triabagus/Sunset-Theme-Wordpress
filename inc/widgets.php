@@ -70,3 +70,17 @@ class Sunset_Profile_Widget extends WP_Widget
 add_action( 'widgets_init', function(){
 	register_widget( 'Sunset_Profile_Widget');
 });
+
+/*
+	Edit default WordPress widgets
+*/
+
+function sunset_tag_cloud_font_change( $args)
+{
+	$args['smallest']	= 10;
+	$args['largest']	= 10;
+
+	return $args;
+} 
+
+add_filter( 'widget_tag_cloud_args', 'sunset_tag_cloud_font_change');

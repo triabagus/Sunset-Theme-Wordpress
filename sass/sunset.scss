@@ -975,3 +975,33 @@ a.comment-reply-link {
         color: #fff;
     }
 }
+
+/* 
+	Widgets section
+	------------------------------------------------
+*/
+h2.widgettitle {
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    background-color: #303030;
+    padding: 8px;
+    border-radius: 20px;
+    line-height: 1em;
+    margin-bottom: 20px;
+    letter-spacing: 0.2px;
+}
+
+// Tags Cloud Widget
+.tagcloud {
+    text-align: center;
+
+    a {
+        display: inline-block;
+        background-color: #7d7d7d;
+        padding: 1px 9px;
+        border-radius: 10px;
+        color: #eee;
+    }
+}
