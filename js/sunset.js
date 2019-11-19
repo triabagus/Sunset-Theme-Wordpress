@@ -165,5 +165,7 @@ jQuery(document).ready(function ($) {
     /**Sidebar  function*/
     $(document).on('click', '.js-toggleSidebar', function () {
         $('.sunset-sidebar').toggleClass('sidebar-closed');
+        $('body').toggleClass('no-scroll');
+        $('.sunset-overlay').fadeToggle(320);
     });
 });
