@@ -112,13 +112,24 @@ function sunset_check_paged($num = null)
 
 function sunset_save_contact()
 {
-    $name = wp_strip_all_tags($_POST["name"]);
+    $title = wp_strip_all_tags($_POST["name"]);
     $email = wp_strip_all_tags($_POST["email"]);
     $message = wp_strip_all_tags($_POST["message"]);
 
-    echo $name. ','. $email.','.$message;
+    $args = array(
+        'post_title'        => $title,
+        'post_content'      => $message,
+        'post_author'       => 1,
+        'post_status'       => 'publish',
+        'post_type'         => 'sunset-contact',
+        'meta_input'        => array(
+            '_contact_email_value_key'  => $email
+        )
+    ); 
 
-    //wp_insert_post
+    $postID = wp_insert_post($args);
+
+    echo $postID;
 
     die();
 }
