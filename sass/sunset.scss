@@ -1109,3 +1109,18 @@ h2.widgettitle {
         padding-right: 10px;
     }
 }
+
+//Contact Form
+.form-control-msg {
+    display: none;
+}
+
+.is-invalid {
+    .form-control-msg {
+        display: block;
+    }
+}
+
+.js-show-feedback {
+    display: block;
+}

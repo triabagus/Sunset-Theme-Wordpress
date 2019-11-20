@@ -174,11 +174,32 @@ jQuery(document).ready(function ($) {
 
         e.preventDefault();
 
+        $('.is-invalid').removeClass('is-invalid');
+        $('.js-show-feedback').removeClass('js-show-feedback');
+
         var form = $(this),
             name = form.find('#name').val(),
             email = form.find('#email').val(),
             message = form.find('#message').val(),
             ajaxurl = form.data('url');
+
+        if (name === '') {
+            $('#name').addClass('is-invalid');
+            return;
+        }
+
+        if (email === '') {
+            $('#email').addClass('is-invalid');
+            return;
+        }
+
+        if (message === '') {
+            $('#message').addClass('is-invalid');
+            return;
+        }
+
+        form.find('input,button,textarea').attr('disabled', 'disabled');
+        $('.js-form-submission').addClass('js-show-feedback');
 
         $.ajax({
 
@@ -191,13 +212,27 @@ jQuery(document).ready(function ($) {
                 action: 'sunset_save_user_contact_form'
             },
             error: function (response) {
-                console.log(response);
+                $('.js-form-submission').removeClass('js-show-feedback');
+                $('.js-form-error').addClass('js-show-feedback');
+                form.find('input, button, textarea').removeAttr('disabled');
             },
             success: function (response) {
                 if (response == 0) {
-                    console.log('Unable to save your message , Please try again later');
+
+                    setTimeout(function () {
+                        $('.js-form-submission').removeClass('js-show-feedback');
+                        $('.js-form-error').addClass('js-show-feedback');
+                        form.find('input, button, textarea').removeAttr('disabled');
+                    }, 1500);
+
                 } else {
-                    console.log('Message saved, thanks you !');
+
+                    setTimeout(function () {
+                        $('.js-form-submission').removeClass('js-show-feedback');
+                        $('.js-form-success').addClass('js-show-feedback');
+                        form.find('input, button, textarea').removeAttr('disabled').val('');
+                    }, 1500);
+
                 }
             }
         });

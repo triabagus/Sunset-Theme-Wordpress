@@ -130,6 +130,7 @@ function sunset_save_contact()
     $postID = wp_insert_post($args);
 
     echo $postID;
+    // echo 0;
 
     die();
 }
