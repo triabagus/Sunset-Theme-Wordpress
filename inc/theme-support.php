@@ -260,8 +260,8 @@ function mailtrap($phpmailer) {
     $phpmailer->Host = 'smtp.mailtrap.io';
     $phpmailer->SMTPAuth = true;
     $phpmailer->Port = 2525;
-    $phpmailer->Username = '';
-    $phpmailer->Password = '';
+    $phpmailer->Username = ''; //check your username in mailtrap
+    $phpmailer->Password = ''; //check your password in mailtrap
 }
 
 add_action('phpmailer_init', 'mailtrap');
