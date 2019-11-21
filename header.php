@@ -65,7 +65,9 @@
                             <h2 class="site-description"><?php bloginfo('description'); ?></h2>
                         </div><!-- .table-cell -->
                     </div><!-- .header-content -->
-                    <div class="nav-container">
+
+
+                    <div class="nav-container d-xs-none">
 
                         <nav class="nav justify-content-center navbar-sunset">
                             <?php 

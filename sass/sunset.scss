@@ -66,6 +66,10 @@ a {
     position: relative;
     display: block;
     height: 326px;
+
+    @media (max-width:$break-tablet) {
+        height: 200px;
+    }
 }
 
 .site-title {
@@ -176,7 +180,7 @@ a {
             border: 0;
             padding: 0;
             border-radius: 0;
-            background: rgba(0, 0, 0, 0.75);
+            background-color: rgba(0, 0, 0, 0.75);
 
             li {
                 display: block;
@@ -203,6 +207,10 @@ a {
 */
 article {
     margin: 40px 0px;
+
+    @media (max-width:$xs) {
+        margin: 20px 0px;
+    }
 }
 
 h1 {
@@ -228,6 +236,10 @@ h1 {
         &:after {
             margin-left: 10px;
         }
+    }
+
+    @media (max-width:$xs) {
+        font-size: 26px;
     }
 }
 
@@ -277,6 +289,10 @@ h1 {
         left: 0;
         background-color: rgba(0, 0, 0, 0.15);
         box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.35);
+    }
+
+    @media (max-width:$xs) {
+        height: 220px;
     }
 }
 
@@ -356,6 +372,10 @@ h1 {
         position: relative;
         height: 600px;
         @extend %text-shadow;
+
+        @media (max-width:$xs) {
+            height: 220px;
+        }
     }
 
     h1,
@@ -456,6 +476,10 @@ h1 {
 
         &:after {
             background-color: transparent;
+        }
+
+        @media (max-width: $xs) {
+            height: 220px;
         }
     }
 
@@ -579,6 +603,10 @@ h1 {
             }
         }
 
+        @media (max-width: $xs) {
+            font-size: 20px;
+        }
+
     }
 
     .quote-author {
@@ -640,6 +668,7 @@ h1 {
 
     .entry-meta {
         margin-bottom: 5px;
+        padding: 0px 10px;
     }
 
     .entry-excerpt {
@@ -647,7 +676,7 @@ h1 {
 
         p {
             font-size: 15px;
-            padding: 5px;
+            padding: 10px;
         }
     }
 
@@ -1003,6 +1032,21 @@ a.comment-reply-link {
     }
 }
 
+.d-xs-block {
+    display: none !important;
+
+    @media (max-width:$xs) {
+        display: block !important;
+    }
+}
+
+
+.d-xs-none {
+    @media (max-width: $xs) {
+        display: none !important;
+    }
+}
+
 /* 
 	Widgets section
 	------------------------------------------------
@@ -1204,4 +1248,16 @@ h2.widgettitle {
 
 .js-show-feedback {
     display: block;
+}
+
+@media (max-width: $xs) {
+
+    .dropdown-menu {
+        background-color: #212529;
+
+        .dropdown-item {
+
+            background-color: #212529;
+        }
+    }
 }

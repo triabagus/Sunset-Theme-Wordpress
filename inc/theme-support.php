@@ -255,7 +255,8 @@ function sunset_get_post_navigation()
 	TRIAL MAILTRAP SMTP LOCAL FUNCTIONS
 	========================
 */
-function mailtrap($phpmailer) {
+function mailtrap($phpmailer) 
+{
     $phpmailer->isSMTP();
     $phpmailer->Host = 'smtp.mailtrap.io';
     $phpmailer->SMTPAuth = true;
@@ -265,3 +266,17 @@ function mailtrap($phpmailer) {
 }
 
 add_action('phpmailer_init', 'mailtrap');
+
+/*
+	========================
+	INITIALIZE GLOBAL MOBILE DETECT FUNCTIONS
+	========================
+*/
+
+function mobileDetectGlobal()
+{
+    global $detect;
+    $detect = new Mobile_Detect;
+}
+
+add_action('after_setup_theme', 'mobileDetectGlobal');
